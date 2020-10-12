@@ -1,0 +1,17 @@
+.cast-card {
+    margin: 10px;
+}
+
+.person-card-img {
+    height: 150px;
+    width: 150px;
+}
+
+.person-card-body {
+    font-size: 10px;
+}
+
+.card-body {
+    margin: 1px;
+    padding: 2px;
+}
