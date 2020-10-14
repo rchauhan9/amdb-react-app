@@ -32,6 +32,8 @@ export const TITLE_BY_URL_ID = gql`
      summary
      released
      certificateRating
+     storyline
+     tagline
      urlID
      genres {
       genre {

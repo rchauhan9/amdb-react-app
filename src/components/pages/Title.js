@@ -2,11 +2,12 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import { TITLE_BY_URL_ID } from '../../graphql/queries';
-import TitleHeader from '../TitleHeader';
 import TitleBody from '../TitleBody';
+import MainHeaderView from '../views/MainHeaderView';
+
+import '../../css/pages/page.css'
 
 const Title = (props) => {
-    console.log("Movie ID:", props.match.params.id)
 
     const { loading, error, data } = useQuery(TITLE_BY_URL_ID, {
         variables: {
@@ -25,15 +26,15 @@ const Title = (props) => {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container page">
             <br />
             <br />
-            <TitleHeader title={data.titleByUrlID.name}
-                        released={data.titleByUrlID.released}
-                        certificate={data.titleByUrlID.certificateRating}
-                        genres={data.titleByUrlID.genres} />
+            <MainHeaderView mainHeader={data.titleByUrlID.name} subHeader={`(${data.titleByUrlID.released})`} />
             <TitleBody description={data.titleByUrlID.description}
                         cast={data.titleByUrlID.cast}
+                        summary={data.titleByUrlID.summary}
+                        storyline={data.titleByUrlID.storyline}
+                        tagline={data.titleByUrlID.tagline}
                         directors={data.titleByUrlID.directors}
                         writers={data.titleByUrlID.writers}
                         genres={data.titleByUrlID.genres} />

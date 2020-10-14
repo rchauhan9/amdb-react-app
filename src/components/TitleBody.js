@@ -1,13 +1,17 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 
 import CastList from './CastList';
-import DarkKnight from '../img/dark-knight.jpg'
-import LeoDiCap from '../img/leo-dicap.jpg'
+import ImageProfileView from "./views/ImageProfileView";
+import ImageThumbnailView from "./views/ImageThumbnailView";
+import SectionHeaderView from "./views/SectionHeaderView";
+import HorizontalGenresView from "./views/HorizontalGenresView";
+import LongTextView from "./views/LongTextView";
 
-const AutoplaySlider = withAutoplay(AwesomeSlider);
+import DarkKnight from '../img/dark-knight.jpg'
+import SectionCard from "./cards/SectionCard";
+
+const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
 
 const TitleBody = (props) => {
     
@@ -15,26 +19,25 @@ const TitleBody = (props) => {
         <div>
             <div className="row">
                 <div className="col-4">
-                    <img className="img-fluid" src={DarkKnight} alt="The Dark Knight Movie Poster" />
+                    <ImageProfileView src={DarkKnight} alt="The Dark Knight Movie Poster" />
                 </div>
                 <div className="col-8">
-                    <AutoplaySlider play={true} cancelOnInteraction={false} interval={8000} bullets={false}>
-                        <div data-src={DarkKnight} />
-                        <div data-src={LeoDiCap} />
-                    </AutoplaySlider>
+                    <ImageThumbnailView images={images} interval={3000} />
                 </div>
             </div>
             <br />
             <p><strong>Director:</strong> {props.directors[0].person.name}</p>
             <p><strong>Writers:</strong> {props.writers[0].person.name}</p>
-            <br />
-            <h3>Plot</h3>
-            <hr />
+            <SectionHeaderView title="Plot" />
+            <SectionCard content={"Hello"}>
+                <LongTextView tag="Storyline" text={props.storyline} />
+                <LongTextView tag="Summary" text={props.summary} />
+                <LongTextView tag="Tagline" text={props.tagline} />
+            </SectionCard>
             <p>{props.description}</p>
             <CastList cast={props.cast} />
-            <h4>Genres</h4>
-            <hr />
-            <p>{props.genres[0].genre.name}</p>
+            <SectionHeaderView title="Genres" />
+            <HorizontalGenresView genres={props.genres} />
         </div>
     )
 }

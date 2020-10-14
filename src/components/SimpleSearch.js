@@ -36,6 +36,12 @@ const SimpleSearch = (props) => {
         }
     }
 
+    if (loading) {
+        return (
+            <div>Loading...</div>
+        )
+    }
+
     return (
         <>
             <div className="input-group mb-3">
