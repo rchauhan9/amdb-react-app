@@ -1,0 +1,1 @@
+export const PRESIGNED_URLS_TITLE="http://localhost:8081/amdb/title/";

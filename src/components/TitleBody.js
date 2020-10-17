@@ -8,7 +8,6 @@ import SectionHeaderView from "./views/SectionHeaderView";
 import HorizontalGenresView from "./views/HorizontalGenresView";
 import LongTextView from "./views/LongTextView";
 
-import DarkKnight from '../img/dark-knight.jpg'
 import SectionCard from "./cards/SectionCard";
 
 const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
@@ -19,7 +18,7 @@ const TitleBody = (props) => {
         <div>
             <div className="row">
                 <div className="col-4">
-                    <ImageProfileView src={DarkKnight} alt="The Dark Knight Movie Poster" />
+                    <ImageProfileView src={`${props.id}/profile.jpg`} alt={`${props.name} Movie Poster`} />
                 </div>
                 <div className="col-8">
                     <ImageThumbnailView images={images} interval={3000} />

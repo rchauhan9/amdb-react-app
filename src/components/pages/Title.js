@@ -30,7 +30,9 @@ const Title = (props) => {
             <br />
             <br />
             <MainHeaderView mainHeader={data.titleByUrlID.name} subHeader={`(${data.titleByUrlID.released})`} />
-            <TitleBody description={data.titleByUrlID.description}
+            <TitleBody id = {data.titleByUrlID.id}
+                       name = {data.titleByUrlID.name}
+                        description={data.titleByUrlID.description}
                         cast={data.titleByUrlID.cast}
                         summary={data.titleByUrlID.summary}
                         storyline={data.titleByUrlID.storyline}
