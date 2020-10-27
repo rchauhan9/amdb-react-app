@@ -1,7 +1,8 @@
 import React from 'react';
 
-import '../css/cast-list.css'
 import CastCard from './cards/CastCard';
+
+import '../css/cast-list.css'
 
 const CastList = (props) => {
 

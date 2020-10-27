@@ -3,8 +3,57 @@ import { gql } from '@apollo/client';
 export const PERSON_BY_URL_ID = gql`
  query Person($urlID: String!) {
    personByUrlID(urlID: $urlID) {
+    id
     name
     dateOfBirth
+    actedIn {
+     title {
+      name
+      released
+      urlID
+     }
+    }
+    directed {
+     title {
+      name
+      released
+      urlID
+     }
+    }
+    produced {
+     title {
+      name
+      released
+      urlID
+     }
+    }
+    wrote {
+     title {
+      name
+      released
+      urlID
+     }
+    }
+    awardNominations {
+     award {
+      name
+      organisation
+      urlID
+     }
+     year
+     titleName
+     titleReleased
+    }
+    awardWins {
+     award {
+      name
+      organisation
+      urlID
+     }
+     year
+     titleName
+     titleReleased
+    }
    }
  }
 `;
@@ -37,6 +86,7 @@ export const TITLE_BY_URL_ID = gql`
      urlID
      genres {
       genre {
+       urlID
        name
       }
      }
@@ -44,6 +94,7 @@ export const TITLE_BY_URL_ID = gql`
        characters
        billing
        person {
+         urlID
          name
        }
      }

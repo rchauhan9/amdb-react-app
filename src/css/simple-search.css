@@ -1,0 +1,12 @@
+.addon {
+    width: 20%;
+}
+
+.addon2 {
+    border: 0px;
+    border-bottom: 1px solid black;
+}
+
+.addon:focus {
+    outline-width: 0;
+}

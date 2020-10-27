@@ -8,7 +8,7 @@ const HorizontalGenresView = ({genres}) => {
     const renderGenres = (genres) => {
         return genres.map((genre, i) => {
             return (
-                <GenreCard genre={genre.genre.name} key={i} />
+                <GenreCard genre={genre.genre} key={i} />
             )
         })
     }

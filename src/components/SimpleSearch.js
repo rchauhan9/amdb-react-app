@@ -1,6 +1,13 @@
 import React, {useState, useEffect} from "react";
 import {useLazyQuery} from "@apollo/client";
 import { SEARCHABLES_BY_NAME } from "../graphql/queries";
+import Suggestion from "./Suggestion";
+
+import { Search } from 'react-bootstrap-icons';
+
+import '../css/simple-search.css'
+import FormControl from "react-bootstrap/FormControl";
+import InputGroup from "react-bootstrap/InputGroup";
 
 const SimpleSearch = (props) => {
 
@@ -29,7 +36,9 @@ const SimpleSearch = (props) => {
             return (
                 <>
                     {searchableByName.map((result, i) => {
-                        return (<li key={i}><a href={`${result.__typename.toLowerCase()}/${result.urlID}`}>{result.name}</a></li>)
+                        return (
+                            <Suggestion suggestion={result} />
+                        )
                     })}
                 </>
             )
@@ -44,13 +53,10 @@ const SimpleSearch = (props) => {
 
     return (
         <>
-            <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Search for a title or person"
-                       aria-label="Search for a title or person" aria-describedby="basic-addon2" onChange={e => setTerm(e.target.value)}/>
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button">Search</button>
-                </div>
-            </div>
+            <InputGroup size="lg" className="addon">
+                <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                             placeholder="Search for a title or person" onChange={e => setTerm(e.target.value)}/>
+            </InputGroup>
             <ul>
                 {data && renderResults(data)}
             </ul>
