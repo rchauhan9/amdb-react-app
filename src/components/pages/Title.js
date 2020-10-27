@@ -4,8 +4,7 @@ import { useQuery } from '@apollo/client';
 import { TITLE_BY_URL_ID } from '../../graphql/queries';
 import TitleBody from '../TitleBody';
 import MainHeaderView from '../views/MainHeaderView';
-
-import '../../css/pages/page.css'
+import Container from "react-bootstrap/Container";
 
 const Title = (props) => {
 
@@ -26,21 +25,23 @@ const Title = (props) => {
     }
 
     return (
-        <div className="container page">
-            <br />
-            <br />
-            <MainHeaderView mainHeader={data.titleByUrlID.name} subHeader={`(${data.titleByUrlID.released})`} />
-            <TitleBody id = {data.titleByUrlID.id}
-                       name = {data.titleByUrlID.name}
-                        description={data.titleByUrlID.description}
-                        cast={data.titleByUrlID.cast}
-                        summary={data.titleByUrlID.summary}
-                        storyline={data.titleByUrlID.storyline}
-                        tagline={data.titleByUrlID.tagline}
-                        directors={data.titleByUrlID.directors}
-                        writers={data.titleByUrlID.writers}
-                        genres={data.titleByUrlID.genres} />
-        </div>
+        <Container fluid="lg">
+
+        <br />
+        <br />
+        <MainHeaderView mainHeader={data.titleByUrlID.name} subHeader={`(${data.titleByUrlID.released})`} />
+        <TitleBody id = {data.titleByUrlID.id}
+                   name = {data.titleByUrlID.name}
+                    description={data.titleByUrlID.description}
+                    cast={data.titleByUrlID.cast}
+                    summary={data.titleByUrlID.summary}
+                    storyline={data.titleByUrlID.storyline}
+                    tagline={data.titleByUrlID.tagline}
+                    directors={data.titleByUrlID.directors}
+                    writers={data.titleByUrlID.writers}
+                    genres={data.titleByUrlID.genres} />
+        </Container>
+
     )
 }
 

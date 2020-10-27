@@ -1,21 +1,29 @@
 import React from 'react';
-import CastCard from '../cards/CastCard';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import SimpleSearch from "../SimpleSearch";
+import Experimental from "../Experimental";
+
+import '../../css/pages/home.css';
 
 const Home = () => {
-    const member = {
-        characters: ["test"],
-        person: {
-            name: "example name"
-        }
-    }
-
     return (
-        <div className="container-md">
-            <h1>Home Page</h1>
-            <CastCard castMember={member} />
-            <SimpleSearch />
-        </div>
+        <Container fluid="lg" className="home-container">
+            <Row className="search-row">
+                <Col className="search-col">
+                    <SimpleSearch />
+                    <Button variant="primary">Search</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Experimental />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
