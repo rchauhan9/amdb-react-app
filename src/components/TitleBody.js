@@ -1,7 +1,6 @@
 import React from 'react';
 import 'react-awesome-slider/dist/styles.css';
 
-import CastList from './CastList';
 import ImageProfileView from "./views/ImageProfileView";
 import ImageThumbnailView from "./views/ImageThumbnailView";
 import SectionHeaderView from "./views/SectionHeaderView";
@@ -9,6 +8,7 @@ import HorizontalGenresView from "./views/HorizontalGenresView";
 import LongTextView from "./views/LongTextView";
 
 import SectionCard from "./cards/SectionCard";
+import HorizontalCastView from "./views/HorizontalCastView";
 
 const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
 
@@ -34,7 +34,8 @@ const TitleBody = (props) => {
                 <LongTextView tag="Tagline" text={props.tagline} />
             </SectionCard>
             <p>{props.description}</p>
-            <CastList cast={props.cast} />
+            <SectionHeaderView title="Cast" />
+            <HorizontalCastView cast={props.cast} />
             <SectionHeaderView title="Genres" />
             <HorizontalGenresView genres={props.genres} />
         </div>

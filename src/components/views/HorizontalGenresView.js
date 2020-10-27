@@ -1,7 +1,7 @@
 import React from "react";
 import GenreCard from "../cards/GenreCard";
 
-import '../../css/views/horizontal-genres-view.css'
+import HScrollView from "./HScrollView";
 
 const HorizontalGenresView = ({genres}) => {
 
@@ -14,9 +14,9 @@ const HorizontalGenresView = ({genres}) => {
     }
 
     return (
-        <div className="genre-list">
+        <HScrollView>
             {renderGenres(genres)}
-        </div>
+        </HScrollView>
     )
 }
 
