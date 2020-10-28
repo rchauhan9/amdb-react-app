@@ -10,7 +10,6 @@ import LongTextView from "./views/LongTextView";
 import SectionCard from "./cards/SectionCard";
 import HorizontalCastView from "./views/HorizontalCastView";
 import RoleCard from "./cards/RoleCard";
-import CastCard from "./cards/CastCard";
 import Row from "react-bootstrap/Row";
 
 const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
@@ -20,7 +19,7 @@ const TitleBody = (props) => {
     const renderDirectors = (directors) => {
         return directors.map(d => {
             return (
-                <RoleCard role="Director" person={d.person} />
+                <RoleCard role="Director" person={d.person} key={`${d.person.name}-drc`}/>
             )
         })
     }
@@ -28,7 +27,7 @@ const TitleBody = (props) => {
     const renderWriters = (writers) => {
         return writers.map(w => {
             return (
-                <RoleCard role="Writer" person={w.person} items={w.items}/>
+                <RoleCard role="Writer" person={w.person} items={w.items} key={`${w.person.name}-wrc`}/>
             )
         })
     }
@@ -36,12 +35,10 @@ const TitleBody = (props) => {
     const renderProducers = (producers) => {
         return producers.map(p => {
             return (
-                <RoleCard role="Producer" person={p.person} items={p.items}/>
+                <RoleCard role="Producer" person={p.person} items={p.items} key={`${p.person.name}-prc`}/>
             )
         })
     }
-    console.log(props)
-
 
     return (
         <div>

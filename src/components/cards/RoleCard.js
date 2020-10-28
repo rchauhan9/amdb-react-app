@@ -3,11 +3,14 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
 import ILink from "../links/ILink";
+import {useImage} from "../hooks/useImage";
+import {PRESIGNED_URLS_PERSON} from "../../constants/constants";
 
-import LeoD from "../../img/leo-dicap.jpg";
 import '../../css/cards/role-card.css'
 
 const RoleCard = ({role, person, items}) => {
+
+    const imgSrc = useImage(PRESIGNED_URLS_PERSON + `${person.id}/profile.jpg`)
 
     const renderItems = (items) => {
         return items ? items.join(", ") : null
@@ -24,7 +27,7 @@ const RoleCard = ({role, person, items}) => {
                     </div>
                 </Card.Body>
                 <Row className="role-row">
-                    <img className="role-image" src={LeoD} alt={`Christopher Nolan profile`} />
+                    <img className="role-image" src={imgSrc} alt={`Christopher Nolan profile`} />
                 </Row>
             </ILink>
         </Card>

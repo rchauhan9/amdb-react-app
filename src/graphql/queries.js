@@ -96,8 +96,9 @@ export const TITLE_BY_URL_ID = gql`
        characters
        billing
        person {
-         urlID
-         name
+        id
+        urlID
+        name
        }
      }
      directors {

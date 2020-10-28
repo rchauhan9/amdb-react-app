@@ -3,8 +3,6 @@ import {useLazyQuery} from "@apollo/client";
 import { SEARCHABLES_BY_NAME } from "../graphql/queries";
 import Suggestion from "./Suggestion";
 
-import { Search } from 'react-bootstrap-icons';
-
 import '../css/simple-search.css'
 import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
