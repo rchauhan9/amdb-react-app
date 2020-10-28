@@ -39,6 +39,7 @@ const Title = (props) => {
                     tagline={data.titleByUrlID.tagline}
                     directors={data.titleByUrlID.directors}
                     writers={data.titleByUrlID.writers}
+                    producers={data.titleByUrlID.producers}
                     genres={data.titleByUrlID.genres} />
         </Container>
 

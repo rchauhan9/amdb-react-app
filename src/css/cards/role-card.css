@@ -1,0 +1,83 @@
+.role-card {
+    float: left;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 8rem;
+    min-width: 18rem !important;
+    width: 31%;
+    margin: 10px;
+
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+}
+
+.role-body {
+    height: 100%;
+    width: 60%;
+    float: left;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.3rem;
+}
+
+.director {
+    border-left: 0.3rem solid #54ade5;
+}
+
+.writer {
+    border-left: 0.3rem solid #e5cd54;
+}
+
+.producer {
+    border-left: 0.3rem solid #30c41d;
+}
+
+.role-details {
+    margin-bottom: 5px;
+}
+
+.role-title {
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.role-text {
+    margin: 0 !important;
+    font-size: 1rem;
+    color: white;
+}
+
+.role-subtext {
+    margin: 0 !important;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.role-row {
+    height: 100%;
+    /*border: 2px solid white;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.role-image {
+    height: 90% !important;
+    width: 70%;
+    border-radius: 10px;
+    margin: 0 5%;
+    object-fit: cover;
+    justify-content: center;
+}

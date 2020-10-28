@@ -21,6 +21,7 @@ export const PERSON_BY_URL_ID = gql`
      }
     }
     produced {
+     items
      title {
       name
       released
@@ -28,6 +29,7 @@ export const PERSON_BY_URL_ID = gql`
      }
     }
     wrote {
+     items
      title {
       name
       released
@@ -100,13 +102,23 @@ export const TITLE_BY_URL_ID = gql`
      }
      directors {
        person {
-         name
+        urlID
+        name
        }
      }
      writers {
-       person {
-         name
-       }
+      items
+      person {
+       urlID
+       name
+      }
+     }
+     producers {
+      items
+      person {
+       urlID
+       name
+      }
      }
    }
  }
