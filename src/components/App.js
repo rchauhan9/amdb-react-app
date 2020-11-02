@@ -10,6 +10,7 @@ import Genre from './pages/Genre'
 
 import '../custom.scss';
 
+console.log(React.version)
 
 const App = () => {
     return (

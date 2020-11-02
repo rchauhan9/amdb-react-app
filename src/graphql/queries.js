@@ -103,6 +103,7 @@ export const TITLE_BY_URL_ID = gql`
      }
      directors {
        person {
+        id
         urlID
         name
        }
@@ -110,6 +111,7 @@ export const TITLE_BY_URL_ID = gql`
      writers {
       items
       person {
+       id
        urlID
        name
       }
@@ -117,6 +119,7 @@ export const TITLE_BY_URL_ID = gql`
      producers {
       items
       person {
+       id
        urlID
        name
       }

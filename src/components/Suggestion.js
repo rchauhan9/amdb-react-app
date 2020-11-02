@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-import {renderDate} from "../helpers/formatting";
+import {formatDate} from "../helpers/formatting";
 import DarkKnight from '../img/dark-knight.jpg';
 
 import '../css/suggestion.css';
@@ -13,7 +13,7 @@ const Suggestion = (props) => {
             <div className="suggestion-container">
                 <div className="suggestion-content">
                     <p className="main-item">{props.suggestion.name}</p>
-                    <p className="sub-item">{props.suggestion.released ? props.suggestion.released : renderDate(props.suggestion.dateOfBirth)}</p>
+                    <p className="sub-item">{props.suggestion.released ? props.suggestion.released : formatDate(props.suggestion.dateOfBirth)}</p>
                 </div>
                 <img className="suggestion-img" src={DarkKnight} alt={`${props.suggestion.name} profile`}/>
             </div>

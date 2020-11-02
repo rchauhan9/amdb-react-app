@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MainHeaderView from "../views/MainHeaderView";
 
-import {renderDate} from "../../helpers/formatting";
+import {formatDate} from "../../helpers/formatting";
 import ImageProfileView from "../views/ImageProfileView";
 import ImageThumbnailView from "../views/ImageThumbnailView";
 import SectionHeaderView from "../views/SectionHeaderView";
@@ -40,7 +40,7 @@ const Person = (props) => {
         <Container>
             <Row>
                 <Col>
-                    <MainHeaderView mainHeader={data.personByUrlID.name} subHeader={`(${renderDate(data.personByUrlID.dateOfBirth)})`} />
+                    <MainHeaderView mainHeader={data.personByUrlID.name} subHeader={`(${formatDate(data.personByUrlID.dateOfBirth)})`} />
                 </Col>
             </Row>
             <Row>

@@ -11,6 +11,7 @@ import SectionCard from "./cards/SectionCard";
 import HorizontalCastView from "./views/HorizontalCastView";
 import RoleCard from "./cards/RoleCard";
 import Row from "react-bootstrap/Row";
+import {PRESIGNED_URLS_TITLE, PROFILE} from "../constants/constants";
 
 const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
 
@@ -44,7 +45,7 @@ const TitleBody = (props) => {
         <div>
             <div className="row">
                 <div className="col-4">
-                    <ImageProfileView src={`${props.id}/profile.jpg`} alt={`${props.name} Movie Poster`} />
+                    <ImageProfileView src={PRESIGNED_URLS_TITLE + props.id + PROFILE} alt={`${props.name} Movie Poster`} />
                 </div>
                 <div className="col-8">
                     <ImageThumbnailView images={images} interval={3000} />
@@ -58,7 +59,7 @@ const TitleBody = (props) => {
             </Row>
 
             <SectionHeaderView title="Plot" />
-            <SectionCard content={"Hello"}>
+            <SectionCard>
                 <LongTextView tag="Storyline" text={props.storyline} />
                 <LongTextView tag="Summary" text={props.summary} />
                 <LongTextView tag="Tagline" text={props.tagline} />

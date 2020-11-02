@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 
 import ILink from "../links/ILink";
 import {useImage} from "../hooks/useImage";
+import {formatListToString} from "../../helpers/formatting";
 import {PRESIGNED_URLS_PERSON} from "../../constants/constants";
 
 import '../../css/cards/role-card.css'
@@ -12,10 +13,6 @@ const RoleCard = ({role, person, items}) => {
 
     const imgSrc = useImage(PRESIGNED_URLS_PERSON + `${person.id}/profile.jpg`)
 
-    const renderItems = (items) => {
-        return items ? items.join(", ") : null
-    }
-
     return (
         <Card className="role-card">
             <ILink to={`/person/${person.urlID}`}>
@@ -23,11 +20,11 @@ const RoleCard = ({role, person, items}) => {
                     <Card.Title className="role-title">{role}</Card.Title>
                     <div className="role-details">
                         <Card.Text className="role-text">{person.name}</Card.Text>
-                        <Card.Text className="role-subtext">{renderItems(items)}</Card.Text>
+                        <Card.Text className="role-subtext">{formatListToString(items)}</Card.Text>
                     </div>
                 </Card.Body>
                 <Row className="role-row">
-                    <img className="role-image" src={imgSrc} alt={`Christopher Nolan profile`} />
+                    <img className="role-image" src={imgSrc} alt={`${person.name} profile`} />
                 </Row>
             </ILink>
         </Card>
