@@ -9,6 +9,7 @@ import Title from './pages/Title'
 import Genre from './pages/Genre'
 
 import '../custom.scss';
+import Search from "./pages/Search";
 
 console.log(React.version)
 
@@ -22,6 +23,7 @@ const App = () => {
                     <Route path="/person/:id" exact component={Person} />
                     <Route path="/title/:id" exact component={Title} />
                     <Route path="/genre/:id" exact component={Genre} />
+                    <Route path="/search/:term" exact component={Search} />
                 </Switch>
             </div>
       </Router>
