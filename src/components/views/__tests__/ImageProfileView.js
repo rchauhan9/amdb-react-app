@@ -9,7 +9,7 @@ describe("<ImageProfileView />", () => {
 
     it("Renders a div img-container with an img inside of it", () => {
         const wrapper = mount(<ImageProfileView src="img/src" alt="image alt text"/>);
-        expect(wrapper).toContainMatchingElements(1, "div.img-container")
+        expect(wrapper).toContainMatchingElements(1, "div.image-profile-view")
         expect(wrapper).toContainMatchingElements(1, "img")
     })
 

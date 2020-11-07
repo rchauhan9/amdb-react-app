@@ -54,7 +54,7 @@ describe("<CastCard />", () => {
                 <CastCard castMember={castMember} />
             </Router>
         );
-        const cardTitle = wrapper.find("div.title")
+        const cardTitle = wrapper.find("div.cast-actor-name")
         expect(cardTitle).toHaveText("Christian Bale")
     })
 
@@ -64,7 +64,7 @@ describe("<CastCard />", () => {
                 <CastCard castMember={castMember} />
             </Router>
         );
-        const cardText = wrapper.find("p.text")
+        const cardText = wrapper.find("p.cast-character")
         expect(cardText).toHaveText("Bruce Wayne / Batman")
     })
 
