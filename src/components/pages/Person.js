@@ -12,6 +12,7 @@ import {formatDate} from "../../helpers/formatting";
 import ImageProfileView from "../views/ImageProfileView";
 import ImageThumbnailView from "../views/ImageThumbnailView";
 import SectionHeaderView from "../views/SectionHeaderView";
+import {PRESIGNED_URLS_PERSON, PRESIGNED_URLS_TITLE, PROFILE} from "../../constants/constants";
 
 const images = ['../../img/dark-knight.jpg', "../../img/leo-dicap.jpg"];
 
@@ -33,9 +34,6 @@ const Person = (props) => {
         )
     }
 
-    console.log("Person ID:", props.match.params.id)
-    console.log("Data:", data)
-
     return (
         <Container>
             <Row>
@@ -45,7 +43,7 @@ const Person = (props) => {
             </Row>
             <Row>
                 <Col>
-                    <ImageProfileView src={`${data.personByUrlID.id}/profile.jpg`} alt={`${data.personByUrlID.name} Profile Picture`} />
+                    <ImageProfileView src={PRESIGNED_URLS_PERSON + data.personByUrlID.id + PROFILE} alt={`${data.personByUrlID.name} Profile Picture`} />
                 </Col>
                 <Col>
                     <ImageThumbnailView images={images} interval={3000} />

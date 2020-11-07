@@ -4,7 +4,7 @@ import '../../css/views/h-scroll-view.css'
 
 const HScrollView = (props) => {
     return (
-        <div className="list">
+        <div className="h-scroll-view">
             {props.children}
         </div>
     )

@@ -4,7 +4,7 @@ import CastCard from "../cards/CastCard";
 import {compareCast} from "../../helpers/sorting";
 import {formatToSlug} from "../../helpers/formatting";
 
-const HorizontalCastView = (props) => {
+const HorizontalCastView = ({cast}) => {
     const renderCast = (cast) => {
         cast = cast.slice().sort(compareCast)
         return cast.map(c => {
@@ -16,7 +16,7 @@ const HorizontalCastView = (props) => {
 
     return (
         <HScrollView>
-            {renderCast(props.cast)}
+            {renderCast(cast)}
         </HScrollView>
     )
 }

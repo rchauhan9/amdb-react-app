@@ -1,8 +1,12 @@
 import React from 'react';
 import {SEARCHABLES_BY_NAME} from "../../graphql/queries";
 import {useQuery} from "@apollo/client";
-import {Link} from "react-router-dom";
 import Suggestion from "../Suggestion";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+
+import '../../css/pages/search.css'
 
 const Search = (props) => {
 
@@ -36,9 +40,16 @@ const Search = (props) => {
     }
 
     return (
-        <ul>
-            {data && renderResults(data)}
-        </ul>
+        <Container fluid="lg" className="search-container">
+            <Row className="search-row">
+                <Col className="search-col">
+                    <ul>
+                        {data && renderResults(data)}
+                    </ul>
+                    <a href={"/"}>Can't find what you were looking for? Suggest a title or person.</a>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
