@@ -1,0 +1,23 @@
+image: docker:latest
+
+stages:
+  - test
+  - package
+
+services:
+  - docker:dind
+
+amdb-react-test:
+  stage: test
+  script:
+    - docker build -t rchauhan9/amdb-react-test -f ./Dockerfile.dev ./
+    - docker run -e CI=true rchauhan9/amdb-react-test npm test
+
+amdb-react-build:
+  only:
+    - master
+  stage: package
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
