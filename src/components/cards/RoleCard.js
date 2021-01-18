@@ -20,7 +20,7 @@ const RoleCard = ({role, person, items}) => {
                     <Card.Title className="role-title">{role}</Card.Title>
                     <div className="role-details">
                         <Card.Text className="role-text">{person.name}</Card.Text>
-                        <Card.Text className="role-subtext">{formatListToString(items)}</Card.Text>
+                        <Card.Text className="role-subtext">{formatListToString(items, ", ")}</Card.Text>
                     </div>
                 </Card.Body>
                 <Row className="role-row">

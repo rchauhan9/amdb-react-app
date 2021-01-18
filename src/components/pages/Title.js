@@ -14,6 +14,8 @@ const Title = (props) => {
         },
      });
 
+    console.log(data)
+
     if (loading) return null;
     if (error) return `Error! ${error}`;
     if (data.titleByUrlID == null) {

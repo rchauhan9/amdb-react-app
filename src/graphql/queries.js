@@ -1,5 +1,20 @@
 import { gql } from '@apollo/client';
 
+export const GENRE_BY_URL_ID = gql`
+ query Genre($urlID: String!) {
+  genreByUrlID(urlID: $urlID) {
+    id
+    name
+    urlID
+    movies {
+     title {
+      name
+     }
+    }
+  }
+ }
+`
+
 export const PERSON_BY_URL_ID = gql`
  query Person($urlID: String!) {
    personByUrlID(urlID: $urlID) {

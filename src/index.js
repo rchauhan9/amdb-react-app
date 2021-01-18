@@ -8,5 +8,5 @@ import { client } from './graphql/Client';
 
 ReactDOM.render(
     <ApolloProvider client={client}>
-            <App />  
+        <App />
     </ApolloProvider>, document.querySelector('#root'));
