@@ -1,13 +1,20 @@
 import React from 'react';
-
-import '../../css/views/h-scroll-view.css'
+import styled from 'styled-components';
 
 const HScrollView = (props) => {
     return (
-        <div className="h-scroll-view">
+        <HSV>
             {props.children}
-        </div>
+        </HSV>
     )
 }
+
+const HSV = styled.div`
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    width: 100%;
+`
+HSV.displayName = 'HSV'
 
 export default HScrollView;

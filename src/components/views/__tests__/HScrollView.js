@@ -7,6 +7,6 @@ describe("<HScrollView />", () => {
 
     it("Renders a div with className list", () => {
         const wrapper = mount(<HScrollView />);
-        expect(wrapper).toContainMatchingElements(1, 'div.h-scroll-view')
+        expect(wrapper).toContainMatchingElements(1, 'HSV')
     })
 })

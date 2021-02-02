@@ -1,7 +1,0 @@
-.h-scroll-view {
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-
-    width: 100%;
-}

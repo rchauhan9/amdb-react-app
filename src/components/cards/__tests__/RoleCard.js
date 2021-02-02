@@ -35,13 +35,13 @@ describe("<RoleCard />", () => {
         expect(iLink).toHaveProp("to", "/person/aBcDeFg1234")
     })
 
-    it("Renders an Card Title component with role.name inside of it", () => {
+    it("Renders a Card Title component with role.name inside of it", () => {
         const wrapper = mount(
             <Router>
                 <RoleCard role={role} person={person} items={items} />
             </Router>
         );
-        const title = wrapper.find('div.role-title')
+        const title = wrapper.find('card-title')
         expect(title).toHaveText("Producer")
     })
 
@@ -51,9 +51,9 @@ describe("<RoleCard />", () => {
                 <RoleCard role={role} person={person} items={items} />
             </Router>
         );
-        const details = wrapper.find('div.role-details')
-        const text = details.find('p.role-text')
-        const subtext = details.find('p.role-subtext')
+        const details = wrapper.find('RoleDetails')
+        const text = details.find('RoleText')
+        const subtext = details.find('RoleSubtext')
         expect(text).toHaveText("Christopher Nolan")
         expect(subtext).toHaveText("producer")
     })

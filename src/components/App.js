@@ -8,15 +8,12 @@ import Person from './pages/Person'
 import Title from './pages/Title'
 import Genre from './pages/Genre'
 
-import '../custom.scss';
 import Search from "./pages/Search";
-
-console.log(React.version)
 
 const App = () => {
     return (
         <Router history={history}>
-            <div>
+            <div style={{ 'background': '#1a1a1a' }}>
                 <NavBar />
                 <Switch>
                     <Route path="/" exact component={Home} />

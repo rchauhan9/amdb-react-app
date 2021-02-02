@@ -22,16 +22,6 @@ describe("<GenreCard />", () => {
         expect(iLink).toHaveProp("to", "/genre/aBcDeFg1234")
     })
 
-    it("Renders a div with classnames genre-card and lower-case of genre.name", () => {
-        const wrapper = mount(
-            <Router>
-                <GenreCard genre={genre}/>
-            </Router>
-        );
-        const div = wrapper.find('div')
-        expect(div).toHaveClassName("genre-card thriller")
-    })
-
     it("Renders an h3 component with a genre's name in it", () => {
         const wrapper = mount(
             <Router>

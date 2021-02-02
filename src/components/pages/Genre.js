@@ -2,12 +2,10 @@ import React from 'react';
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import {useQuery} from "@apollo/client";
-import {GENRE_BY_URL_ID} from "../../graphql/queries";
+import styled from "styled-components";
 
 import GalleryView from '../views/GalleryView'
-
-import '../../css/cards/genre-card.css'
-import '../../css/pages/genre.css'
+import {GENRE_BY_URL_ID} from "../../graphql/queries";
 
 const Genre = (props) => {
 
@@ -29,16 +27,35 @@ const Genre = (props) => {
     }
 
     return (
-        <Container fluid="lg" className="genre-container">
+        <Container fluid="lg" style={{ 'background': '#232323' }}>
             <br />
             <Row>
-                <div className={`genre-header-box ${data.genreByUrlID.name.toLowerCase()}`}>
-                    <div className="genre-header-text">{data.genreByUrlID.name}</div>
-                </div>
+                <GenreHeaderBox className={`${data.genreByUrlID.name.toLowerCase()}`}>
+                    <GenreHeaderText>{data.genreByUrlID.name}</GenreHeaderText>
+                </GenreHeaderBox>
             </Row>
             <GalleryView />
         </Container>
     )
 }
+
+const GenreHeaderBox = styled.div`
+    min-height: 100px;
+    max-height: 150px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10px;
+
+    display: flex;
+    align-items: center;
+`
+
+const GenreHeaderText = styled.div`
+    font-size: 4rem;
+    padding-left: 1rem;
+    color: white;
+`
 
 export default Genre;

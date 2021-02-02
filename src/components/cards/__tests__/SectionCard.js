@@ -11,7 +11,7 @@ describe("<SectionCard />", () => {
                 <p>Some text here</p>
             </SectionCard>
         );
-        const div = wrapper.find('div.section-card')
+        const div = wrapper.find('Section')
         expect(div).toHaveProp("children", <p>Some text here</p>)
     })
 })

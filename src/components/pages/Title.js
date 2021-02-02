@@ -27,7 +27,7 @@ const Title = (props) => {
     }
 
     return (
-        <Container fluid="lg">
+        <Container fluid="lg" style={{ 'background': '#232323' }}>
 
         <br />
         <br />

@@ -1,21 +1,21 @@
 import React from "react";
+import styled from 'styled-components';
 
-import '../../css/views/main-header-view.css'
 
 const MainHeaderView = ({mainHeader, subHeader}) => {
     const renderHeaders = (mainHeader, subHeader) => {
         if (subHeader) {
             return (
-                <h1 className="mainHeader">
+                <MainHeader>
                     {mainHeader}
-                    <span className="subHeader">{" " + subHeader}</span>
-                </h1>
+                    <SubHeader>{" " + subHeader}</SubHeader>
+                </MainHeader>
             )
         } else {
             return (
-                <h1 className="mainHeader">
+                <MainHeader>
                     {mainHeader}
-                </h1>
+                </MainHeader>
             )
         }
     }
@@ -27,5 +27,13 @@ const MainHeaderView = ({mainHeader, subHeader}) => {
         </div>
     )
 }
+
+const MainHeader = styled.h1`
+    color: white;
+`
+
+const SubHeader = styled.span`
+    color: gray;
+`
 
 export default MainHeaderView;

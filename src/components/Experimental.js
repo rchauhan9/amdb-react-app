@@ -7,7 +7,6 @@ import RoleCard from "./cards/RoleCard";
 import {useAccordionToggle} from "react-bootstrap/";
 import {AccordionContext} from "react-bootstrap";
 
-// import '../css/experimental.css'
 
 const role1 = {
     role: "Director",

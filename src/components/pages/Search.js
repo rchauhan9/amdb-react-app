@@ -5,8 +5,8 @@ import Suggestion from "../Suggestion";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import styled from 'styled-components';
 
-import '../../css/pages/search.css'
 
 const Search = (props) => {
 
@@ -40,17 +40,36 @@ const Search = (props) => {
     }
 
     return (
-        <Container fluid="lg" className="search-container">
-            <Row className="search-row">
-                <Col className="search-col">
+        <SearchContainer fluid="lg" style={{  }}>
+            <SearchRow>
+                <SearchCol>
                     <ul>
                         {data && renderResults(data)}
                     </ul>
                     <a href={"/"}>Can't find what you were looking for? Suggest a title or person.</a>
-                </Col>
-            </Row>
-        </Container>
+                </SearchCol>
+            </SearchRow>
+        </SearchContainer>
     )
 }
+
+const SearchContainer = styled(Container)`
+    border: 4px solid red;
+    background: #232323;
+`
+
+const SearchRow = styled(Row)`
+    max-height: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+`
+
+const SearchCol = styled(Col)`
+    border: 4px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 export default Search;

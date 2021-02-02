@@ -1,13 +1,26 @@
 import React from "react";
+import styled from 'styled-components';
 
-import '../../css/cards/section-card.css'
+const Section = styled.div`
+    width: 100%;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #373737;
+
+    padding: 10px;
+    margin: 10px 10px 10px -2px;
+`
 
 const SectionCard = (props) => {
     return (
-        <div className="section-card">
+        <Section>
             {props.children}
-        </div>
+        </Section>
     )
 }
+
+Section.displayName = 'Section'
 
 export default SectionCard;

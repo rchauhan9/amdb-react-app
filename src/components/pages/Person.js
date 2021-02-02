@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../../css/pages/page.css'
 import {useQuery} from "@apollo/client";
 import {PERSON_BY_URL_ID} from "../../graphql/queries";
 import Container from "react-bootstrap/Container";
@@ -35,7 +34,7 @@ const Person = (props) => {
     }
 
     return (
-        <Container>
+        <Container style={{ 'background': '#232323' }}>
             <Row>
                 <Col>
                     <MainHeaderView mainHeader={data.personByUrlID.name} subHeader={`(${formatDate(data.personByUrlID.dateOfBirth)})`} />
